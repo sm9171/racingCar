@@ -12,9 +12,9 @@ public class Car {
         this.position = position;
     }
 
-    public static Car createCar(String name, Position position) {
+    public static Car createCar(String name) {
         validateCarName(name);
-        return new Car(name, position);
+        return new Car(name, new Position(0));
     }
 
     public String getName() {

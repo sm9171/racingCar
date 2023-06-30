@@ -1,7 +1,5 @@
 package domain;
 
-import lombok.Builder;
-
 public class Position {
     private Integer distance;
 

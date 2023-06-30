@@ -12,17 +12,14 @@ class CarTest {
 
 	@Test
 	void createCar() {
-		Position position = Position.createPosition(0);
-		Car car = Car.createCar("A자동차", position);
-
+		Car car = Car.createCar("A자동차");
 		assertThat(car.getName()).isEqualTo("A자동차");
 	}
 
 	@Test
 	void createCarOverNameLengthFive() {
-		Position position = Position.createPosition(0);
 		Assertions.assertThrows(
-				Car.createCar("6글자자동차", position), BaseException.class
+				Car.createCar("6글자자동차"), BaseException.class
 		);
 	}
 }
