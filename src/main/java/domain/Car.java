@@ -3,6 +3,10 @@ package domain;
 import exception.BaseException;
 import exception.ResponseMessage;
 
+import java.util.Random;
+
+import static common.RacingCarConstants.*;
+
 public class Car {
     private String name;
     private Position position;
@@ -26,8 +30,18 @@ public class Car {
     }
 
     private static void validateCarName(String name) {
-        if (name.length() > 5) {
+        if (name.length() == 0) {
+            throw new BaseException(ResponseMessage.CAR_NAME_LENGTH_ZERO);
+        }
+
+        if (name.length() > CAR_NAME_LENGTH_LIMIT) {
             throw new BaseException(ResponseMessage.CAR_NAME_LENGTH_OVER_FIVE);
+        }
+    }
+
+    public void move(MovingStrategy movingStrategy) {
+        if (movingStrategy.movable()) {
+            position.plusDistance();
         }
     }
 }

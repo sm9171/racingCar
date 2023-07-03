@@ -13,4 +13,8 @@ public class Position {
 	public static Position createPosition(Integer distance) {
 		return new Position(distance);
 	}
+
+	public void plusDistance() {
+		this.distance++;
+	}
 }
