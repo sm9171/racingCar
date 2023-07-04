@@ -13,4 +13,8 @@ public class RacingGame {
     public List<Car> getCars() {
         return cars;
     }
+
+    public static RacingGame participateCars(List<Car> cars) {
+        return new RacingGame(cars);
+    }
 }
